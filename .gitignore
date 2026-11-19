@@ -1,1 +1,6 @@
 toignore/*
+game_api.txt
+minetest.conf
+minetest.conf.example
+schematic_tables.txt
+settingtypes.txt

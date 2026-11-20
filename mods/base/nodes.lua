@@ -136,3 +136,22 @@ base.reg1nodo("base:stipe_with_fungus" , {
     groups = {choppy=2, oddly_breakable_by_hand=1, flammable=3},
     --sounds = default.node_sound_wood_defaults(),
 })
+
+base.reg1nodo("base:external_fungus", {
+	description = "External Fungus",
+    drawtype = "plantlike",
+	tiles = {"base_external_fungus.png"},
+    inventory_image = "base_external_fungus.png",
+    wield_image = "base_external_fungus.png",
+    paramtype = "light",
+    paramtype2 = "wallmounted",
+    sunlight_propagates = true,
+    walkable = false,
+    selection_box = {
+        type = "wallmounted",
+    },
+    visual_scale = 0.8,
+	groups = {snappy=3, flammable=2, flora=1, attached_node=1},
+	drop = 'base:external_fungus',
+	--sounds = default.node_sound_dirt_defaults(),
+})

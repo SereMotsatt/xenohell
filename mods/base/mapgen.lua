@@ -46,8 +46,6 @@ core.register_decoration({
 -- Schematics
 local modpath = core.get_modpath(core.get_current_modname())
 
-local modpath = core.get_modpath(core.get_current_modname())
-
 core.register_decoration({
 	deco_type = "schematic",
 	place_on = {"base:external_dirt"},
@@ -64,7 +62,7 @@ core.register_decoration({
 	rotation = "random",
 	flags = "place_center_x, place_center_z",
 	y_max = 31000,
-	y_min = 1,
+	y_min = 2,
 })
 
 -- ores
@@ -87,3 +85,65 @@ core.register_ore({
 		persist = 0.70
 	},
 })
+
+-- Forzar mapgen carpathian en áreas nuevas
+--minetest.set_mapgen_setting("mg_name", "carpathian", true)
+
+-- Flags de Carpathian: activar caverns y desactivar floatlands/ridges extremos
+--minetest.set_mapgen_setting("mgcarpathian_spflags", "caverns,nofloatlands", true)
+
+-- Nivel del agua estable
+minetest.set_mapgen_setting("water_level", "1", true)
+
+-- Terreno base muy suave y extenso
+minetest.set_mapgen_setting_noiseparams("mgcarpathian_np_base", {
+    offset = -2,
+    scale = 8,
+    spread = {x = 150, y = 150, z = 150},
+    seed = 90412,
+    octaves = 4,
+    persistence = 0.4,
+    lacunarity = 2.0,
+}, true)
+
+-- Elevaciones principales de Carpathian: bajas y espaciadas para mantener la planicie
+minetest.set_mapgen_setting_noiseparams("mgcarpathian_np_height1", {
+    offset = -0.8,
+    scale = 0.55,
+    spread = {x = 14, y = 14, z = 150},
+    seed = 55109,
+    octaves = 4,
+    persistence = 0.45,
+    lacunarity = 2.0,
+}, true)
+
+minetest.set_mapgen_setting_noiseparams("mgcarpathian_np_height2", {
+    offset = -0.8,
+    scale = 0.35,
+    spread = {x = 500, y = 500, z = 500},
+    seed = 31887,
+    octaves = 3,
+    persistence = 0.45,
+    lacunarity = 2.1,
+}, true)
+
+-- Picos / crestas suaves y puntuales sin saturar el horizonte
+minetest.set_mapgen_setting_noiseparams("mgcarpathian_np_hill_spikey", {
+    offset = -0.65,
+    scale = 0.2,
+    spread = {x = 25, y = 25, z = 300},
+    seed = 77421,
+    octaves = 4,
+    persistence = 0.2,
+    lacunarity = 4.15,
+}, true)
+
+minetest.set_mapgen_setting_noiseparams("mgcarpathian_np_high_ridge", {
+    offset = -0.85,
+    scale = 0.5,
+    spread = {x = 600, y = 600, z = 600},
+    seed = 64205,
+    octaves = 3,
+    persistence = 0.45,
+    lacunarity = 2.0,
+}, true)

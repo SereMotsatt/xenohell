@@ -5,7 +5,7 @@ core.register_on_joinplayer(function(player)
 		type = "regular",
 		sky_color = {
 			day_sky     = "#8c522b",
-			day_horizon = "#b8743b",
+			day_horizon = "#b9743c",
 			dawn_sky    = "#5e2b1d",
 			dawn_horizon= "#9e472a",
 			night_sky   = "#140b0a",

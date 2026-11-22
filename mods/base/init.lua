@@ -1,5 +1,5 @@
 base = {}
-base.version = "0.26.11.19"
+base.version = "26.11.0"
 
 -- mis helpers
 core_get_translator = core.get_translator --Lo mas innecesario que veras hoy :C
@@ -28,11 +28,26 @@ end
 
 minetest.register_on_joinplayer(function(player)
 	player:set_lighting({
-		saturation=1.2,
-		shadows={intensity=0.5, tint={r=0,g=0,b=0.3}},
-		volumetric_light={strength=0.2},
-		exposure={exposure_correction=1.0,luminance_min=-5.0,luminance_max=-2.0,speed_dark_bright=100.0,speed_bright_dark=20.0},
-		bloom={intensity=0.16, strength_factor=0.2}
+		saturation = 1.1, -- Colores hiper-saturados y antinaturales
+		shadows = {
+			intensity = 0.75, -- Sombras mucho más marcadas para contraste dramático
+			tint = {r = 120, g = 43, b = 0.0} -- Intacto
+		},
+		volumetric_light = {
+			strength = 0.12 -- Niebla de luz densa (12x más fuerte) para sensación de atmósfera pesada/tóxica
+		},
+		exposure = {
+			exposure_correction = 0.4, -- Ligera subexposición base para que resalten los brillos
+			luminance_min = -6.0, -- Permite ver detalles en oscuridad profunda (casi visión nocturna)
+			luminance_max = -1.2, -- Quema un poco las luces altas para efecto de radiación/estrella cercana
+			speed_dark_bright = 40.0, -- Adaptación ocular más lenta y orgánica
+			speed_bright_dark = 10.0
+		},
+		bloom = {
+			intensity = 0.035, -- Resplandor evidente en emisores de luz y reflejos
+			strength_factor = 1.0, -- Fuerza de expansión del brillo
+			radius = 1.4 -- Halo amplio y difuso, típico de atmósferas densas
+		},
 	})
 	minetest.chat_send_player(player:get_player_name(), "Welcome to Xenohell, (WORK IN PROGRESS).")
 	minetest.chat_send_player(player:get_player_name(), "Xenohell v"..base.version)

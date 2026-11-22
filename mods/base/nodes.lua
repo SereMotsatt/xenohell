@@ -7,6 +7,14 @@ base.reg1nodo("base:stone", {
 	--sounds = default.node_sound_stone_defaults(),
 })
 
+base.reg1nodo("base:cobble", {
+	description = "Cobble",
+	tiles = {"base_cobble.png"},
+	groups = {cracky=3, stone=1},
+	drop = 'base:cobble',
+	--sounds = default.node_sound_stone_defaults(),
+})
+
 base.reg1nodo("base:dirt", {
 	description = "Dirt",
 	tiles = {"base_dirt.png"},
@@ -122,6 +130,13 @@ base.reg1nodo("base:stipe" , {
         "base_stipe.png", "base_stipe.png", "base_stipe.png",
     },
     paramtype2 = "facedir",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.5, -0.25, 0.25, 0.5, 0.25},
+		},
+	},
     groups = {choppy=2, oddly_breakable_by_hand=1, flammable=3},
     --sounds = default.node_sound_wood_defaults(),
 })
@@ -133,6 +148,13 @@ base.reg1nodo("base:stipe_with_fungus" , {
         "base_stipe_fungus.png", "base_stipe_fungus.png", "base_stipe_fungus.png",
     },
     paramtype2 = "facedir",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.5, -0.25, 0.25, 0.5, 0.25},
+		},
+	},
     groups = {choppy=2, oddly_breakable_by_hand=1, flammable=3},
     --sounds = default.node_sound_wood_defaults(),
 })
@@ -144,11 +166,11 @@ base.reg1nodo("base:external_fungus", {
     inventory_image = "base_external_fungus.png",
     wield_image = "base_external_fungus.png",
     paramtype = "light",
-    paramtype2 = "wallmounted",
     sunlight_propagates = true,
     walkable = false,
     selection_box = {
-        type = "wallmounted",
+        type = "fixed",
+        fixed = {-0.25, -0.5, -0.25, 0.25, 0.0, 0.25},
     },
     visual_scale = 0.8,
 	groups = {snappy=3, flammable=2, flora=1, attached_node=1},

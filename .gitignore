@@ -5,3 +5,4 @@ minetest.conf.example
 schematic_tables.txt
 settingtypes.txt
 mods/base/textures/base_external_dirt_original.png
+mods/base/textures/*.xcf

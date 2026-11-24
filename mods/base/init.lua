@@ -56,6 +56,8 @@ end)
 -- START
 
 uploadfile("initials")
-uploadfile("nodes")
+uploadfile("natural_nodes")
+uploadfile("craft_nodes")
+uploadfile("craft")
 uploadfile("mapgen")
 

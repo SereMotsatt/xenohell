@@ -16,6 +16,18 @@ core.register_biome({
 })
 
 core.register_biome({
+    name = "hardlands",
+    node_top = "base:sand",
+    depth_top = 2,
+    node_filler = "base:sandstone",
+    depth_filler = 3,
+    y_min = 1,
+    y_max = 31000,
+    heat_point = 70,
+    humidity_point = 37,
+})
+
+core.register_biome({
     name = "basedown",
     node_top = "base:mud",
     depth_top = 2,
@@ -37,6 +49,25 @@ core.register_decoration({
         octaves = 3,
         persist = 0.6
     },
+    biomes = {"base"},
+    y_max = 31000,
+    y_min = 1,
+    decoration = "base:xenograss",
+})
+
+core.register_decoration({
+    deco_type = "simple",
+    place_on = {"base:mud"},
+    sidelen = 16,
+    noise_params = {
+        offset = -0.02,
+        scale = 0.78,
+        spread = {x = 100, y = 100, z = 100},
+        seed = 1525,
+        octaves = 3,
+        persist = 0.6
+    },
+    biomes = {"base"},
     y_max = 31000,
     y_min = 1,
     decoration = "base:xenograss",
@@ -49,7 +80,7 @@ local modpath = core.get_modpath(core.get_current_modname())
 core.register_decoration({
 	deco_type = "schematic",
 	place_on = {"base:external_dirt"},
-	sidelen = 8,
+	sidelen = 16,
 	noise_params = {
 		offset = 0.002,
 		scale = 0.08,
@@ -58,9 +89,36 @@ core.register_decoration({
 		octaves = 2,
 		persist = 0.6
 	},
-	schematic = modpath .. "/schematics/stipe_large.mts",
+	schematic = modpath .. "/schematics/carbonwood_tree.mts",
 	rotation = "random",
+    spawn_by = {"base:mud"},
+    num_spawn_by = 1,
 	flags = "place_center_x, place_center_z",
+    place_offset_y = 1,
+    biomes = {"base"},
+	y_max = 31000,
+	y_min = 2,
+})
+
+core.register_decoration({
+	deco_type = "schematic",
+	place_on = {"base:mud"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.002,
+		scale = 0.08,
+		spread = {x = 100, y = 100, z = 100},
+		seed = 9918,
+		octaves = 2,
+		persist = 0.6
+	},
+	schematic = modpath .. "/schematics/carbonwood_tree.mts",
+	rotation = "random",
+    spawn_by = {"base:external_dirt"},
+    num_spawn_by = 1,
+	flags = "place_center_x, place_center_z",
+    place_offset_y = 1,
+    biomes = {"base"},
 	y_max = 31000,
 	y_min = 2,
 })
@@ -75,6 +133,7 @@ core.register_ore({
 	clust_size     = 5,            -- Radio aproximado del parche en nodos
 	y_max          = 31000,
 	y_min          = 1,
+    biomes         = {"base"},
 	noise_threshold = 0.0,         -- Umbral de corte del ruido (sube a 0.2 o 0.4 para parches más aislados)
 	noise_params   = {
 		offset = 0.5,

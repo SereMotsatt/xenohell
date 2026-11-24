@@ -7,6 +7,14 @@ base.reg1nodo("base:stone", {
 	--sounds = default.node_sound_stone_defaults(),
 })
 
+base.reg1nodo("base:sandstone", {
+	description = "Sandstone",
+	tiles = {"base_sandstone.png"},
+	groups = {cracky=3, stone=1},
+	drop = 'base:sandstone',
+	--sounds = default.node_sound_stone_defaults(),
+})
+
 base.reg1nodo("base:cobble", {
 	description = "Cobble",
 	tiles = {"base_cobble.png"},
@@ -28,6 +36,14 @@ base.reg1nodo("base:external_dirt", {
 	tiles = {"base_external_dirt.png"},
 	groups = {crumbly=3, soil=1},
 	drop = 'base:dirt',
+	--sounds = default.node_sound_dirt_defaults(),
+})
+
+base.reg1nodo("base:sand", {
+	description = "Sand",
+	tiles = {"base_sand.png"},
+	groups = {crumbly=3, soil=1},
+	drop = 'base:sand',
 	--sounds = default.node_sound_dirt_defaults(),
 })
 
@@ -123,11 +139,11 @@ base.reg1nodo("base:xenograss", {
     --sounds = default.node_sound_leaves_defaults(),
 })
 
-base.reg1nodo("base:stipe" , {
-    description = "Stipe",
+base.reg1nodo("base:carbonwood_log" , {
+    description = "Carbonwood log",
     tiles = {
-        "base_stipe_top.png", "base_stipe_top.png", "base_stipe.png",
-        "base_stipe.png", "base_stipe.png", "base_stipe.png",
+        "base_carbonwood_top.png", "base_carbonwood_top.png", "base_carbonwood.png",
+        "base_carbonwood.png", "base_carbonwood.png", "base_carbonwood.png",
     },
     paramtype2 = "facedir",
 	drawtype = "nodebox",
@@ -141,11 +157,11 @@ base.reg1nodo("base:stipe" , {
     --sounds = default.node_sound_wood_defaults(),
 })
 
-base.reg1nodo("base:stipe_with_fungus" , {
-    description = "Stipe",
+base.reg1nodo("base:carbonwood_log_with_fungus" , {
+    description = "Carbonwood log with fungus",
     tiles = {
-        "base_stipe_top.png", "base_stipe_top.png", "base_stipe_fungus.png",
-        "base_stipe_fungus.png", "base_stipe_fungus.png", "base_stipe_fungus.png",
+        "base_carbonwood_top.png", "base_carbonwood_top.png", "base_carbonwood_fungus.png",
+        "base_carbonwood_fungus.png", "base_carbonwood_fungus.png", "base_carbonwood_fungus.png",
     },
     paramtype2 = "facedir",
 	drawtype = "nodebox",

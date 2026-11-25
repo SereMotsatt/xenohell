@@ -1,5 +1,5 @@
 
-base.reg1nodo("base:stone", {
+base.reg1nodo("stone", {
 	description = "Stone",
 	tiles = {"base_stone.png"},
 	groups = {cracky=3, stone=1},
@@ -7,7 +7,7 @@ base.reg1nodo("base:stone", {
 	--sounds = default.node_sound_stone_defaults(),
 })
 
-base.reg1nodo("base:sandstone", {
+base.reg1nodo("sandstone", {
 	description = "Sandstone",
 	tiles = {"base_sandstone.png"},
 	groups = {cracky=3, stone=1},
@@ -15,7 +15,7 @@ base.reg1nodo("base:sandstone", {
 	--sounds = default.node_sound_stone_defaults(),
 })
 
-base.reg1nodo("base:cobble", {
+base.reg1nodo("cobble", {
 	description = "Cobble",
 	tiles = {"base_cobble.png"},
 	groups = {cracky=3, stone=1},
@@ -23,7 +23,7 @@ base.reg1nodo("base:cobble", {
 	--sounds = default.node_sound_stone_defaults(),
 })
 
-base.reg1nodo("base:dirt", {
+base.reg1nodo("dirt", {
 	description = "Dirt",
 	tiles = {"base_dirt.png"},
 	groups = {crumbly=3, soil=1},
@@ -31,7 +31,7 @@ base.reg1nodo("base:dirt", {
 	--sounds = default.node_sound_dirt_defaults(),
 })
 
-base.reg1nodo("base:external_dirt", {
+base.reg1nodo("external_dirt", {
 	description = "External Dirt",
 	tiles = {"base_external_dirt.png"},
 	groups = {crumbly=3, soil=1},
@@ -39,7 +39,7 @@ base.reg1nodo("base:external_dirt", {
 	--sounds = default.node_sound_dirt_defaults(),
 })
 
-base.reg1nodo("base:sand", {
+base.reg1nodo("sand", {
 	description = "Sand",
 	tiles = {"base_sand.png"},
 	groups = {crumbly=3, soil=1},
@@ -47,7 +47,7 @@ base.reg1nodo("base:sand", {
 	--sounds = default.node_sound_dirt_defaults(),
 })
 
-base.reg1nodo("base:mud", {
+base.reg1nodo("mud", {
 	description = "Mud",
 	tiles = {"base_mud.png"},
 	groups = {crumbly=3, soil=1},
@@ -55,7 +55,7 @@ base.reg1nodo("base:mud", {
 	--sounds = default.node_sound_dirt_defaults(),
 })
 
-base.reg1nodo("base:water_source", {
+base.reg1nodo("water_source", {
 	description = "Water Source",
 	drawtype = "liquid",
 	tiles = {"base_water.png"},
@@ -82,7 +82,7 @@ base.reg1nodo("base:water_source", {
 	groups = {water=3, liquid=3, puts_out_fire=1},
 })
 
-base.reg1nodo("base:water_flowing", {
+base.reg1nodo("water_flowing", {
 	description = "Flowing Water",
 	drawtype = "flowingliquid",
 	tiles = {"base_water.png"},
@@ -120,8 +120,8 @@ base.reg1nodo("base:water_flowing", {
 	groups = {water=3, liquid=3, puts_out_fire=1, not_in_creative_inventory=1},
 })
 
-base.reg1nodo("base:xenograss", {
-    description = "Xenograss",
+base.reg1nodo("grass", {
+    description = "Grass",
     drawtype = "plantlike",
     tiles = {"base_xenograss.png"},
     waving = 1,
@@ -139,7 +139,7 @@ base.reg1nodo("base:xenograss", {
     --sounds = default.node_sound_leaves_defaults(),
 })
 
-base.reg1nodo("base:carbonwood_log" , {
+base.reg1nodo("carbonwood_log", {
     description = "Carbonwood log",
     tiles = {
         "base_carbonwood_top.png", "base_carbonwood_top.png", "base_carbonwood.png",
@@ -157,7 +157,7 @@ base.reg1nodo("base:carbonwood_log" , {
     --sounds = default.node_sound_wood_defaults(),
 })
 
-base.reg1nodo("base:carbonwood_log_with_fungus" , {
+base.reg1nodo("carbonwood_log_with_fungus" , {
     description = "Carbonwood log with fungus",
     tiles = {
         "base_carbonwood_top.png", "base_carbonwood_top.png", "base_carbonwood_fungus.png",
@@ -175,7 +175,7 @@ base.reg1nodo("base:carbonwood_log_with_fungus" , {
     --sounds = default.node_sound_wood_defaults(),
 })
 
-base.reg1nodo("base:external_fungus", {
+base.reg1nodo("external_fungus", {
 	description = "External Fungus",
     drawtype = "plantlike",
 	tiles = {"base_external_fungus.png"},
@@ -192,4 +192,23 @@ base.reg1nodo("base:external_fungus", {
 	groups = {snappy=3, flammable=2, flora=1, attached_node=1},
 	drop = 'base:external_fungus',
 	--sounds = default.node_sound_dirt_defaults(),
+})
+
+base.reg1nodo("dry_grass", {
+    description = "Dry Grass",
+    drawtype = "plantlike",
+    tiles = {"base_dry_grass.png"},
+    waving = 1,
+    inventory_image = "base_dry_grass.png",
+    wield_image = "base_dry_grass.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+    buildable_to = true,
+    selection_box = {
+        type = "fixed",
+        fixed = {-0.35, -0.5, -0.35, 0.35, -0.5+0.8, 0.35},
+    },
+    groups = {snappy=3, flammable=2, flora=1, attached_node=1},
+    --sounds = default.node_sound_leaves_defaults(),
 })

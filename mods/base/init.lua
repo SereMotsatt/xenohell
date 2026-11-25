@@ -6,17 +6,19 @@ core_get_translator = core.get_translator --Lo mas innecesario que veras hoy :C
 ref_cgt = core_get_translator('base')
 
 function base.reg1nodo(named, ref)
+	local modname = core.get_current_modname()
 	if ref.description ~= nil then
 		ref.description = ref_cgt(ref.description)
 	end
-	core.register_node(named, ref)
+	core.register_node(modname .. ":" .. named, ref)
 end
 
 function base.reg1objfab(named, ref)
+	local modname = core.get_current_modname()
 	if ref.description ~= nil then
 		ref.description = ref_cgt(ref.description)
 	end
-	core.register_craftitem(named, ref)
+	core.register_craftitem(modname .. ":" .. named, ref)
 end
 
 -- -------------

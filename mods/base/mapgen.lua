@@ -52,7 +52,7 @@ core.register_decoration({
     biomes = {"base"},
     y_max = 31000,
     y_min = 1,
-    decoration = "base:xenograss",
+    decoration = "base:grass",
 })
 
 core.register_decoration({
@@ -70,9 +70,26 @@ core.register_decoration({
     biomes = {"base"},
     y_max = 31000,
     y_min = 1,
-    decoration = "base:xenograss",
+    decoration = "base:grass",
 })
 
+core.register_decoration({
+    deco_type = "simple",
+    place_on = {"base:sand"},
+    sidelen = 16,
+    noise_params = {
+        offset = -0.02,
+        scale = 0.07,
+        spread = {x = 100, y = 100, z = 100},
+        seed = 4140,
+        octaves = 3,
+        persist = 0.6
+    },
+    biomes = {"hardlands"},
+    y_max = 31000,
+    y_min = 1,
+    decoration = "base:dry_grass",
+})
 
 -- Schematics
 local modpath = core.get_modpath(core.get_current_modname())
